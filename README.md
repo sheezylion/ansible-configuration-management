@@ -20,4 +20,48 @@ On the diagram below the Virtual Private Network (VPC) is divided into two subne
 
 #### 1. Update Name tag on your Jenkins EC2 Instance to Jenkins-Ansible. We will use this server to run playbooks.
 
+<img width="1617" alt="Screenshot 2024-07-14 at 14 56 30" src="https://github.com/user-attachments/assets/58870b8a-24f6-4461-b05d-2bb4d1cb860a">
 
+#### 2. In your GitHub account create a new repository and name it ansible-config-mgt
+
+<img width="1633" alt="Screenshot 2024-07-14 at 15 03 40" src="https://github.com/user-attachments/assets/701d4320-fdd7-4f64-944d-7d3ff0d6f800">
+
+#### 3. Instal Ansible
+
+```
+sudo apt update
+```
+
+Result:
+
+<img width="770" alt="Screenshot 2024-07-14 at 15 06 42" src="https://github.com/user-attachments/assets/05ed8d4e-0f59-4914-b625-99e81d38f846">
+
+```
+sudo apt install ansible
+```
+
+Result:
+
+<img width="1207" alt="Screenshot 2024-07-14 at 15 07 43" src="https://github.com/user-attachments/assets/4d4a937f-0113-44b8-ade7-c2f5429f059a">
+
+#### Check your ansible version
+
+```
+ansible --version
+```
+
+Result:
+
+<img width="1045" alt="Screenshot 2024-07-14 at 15 08 59" src="https://github.com/user-attachments/assets/8173af19-9ae4-424f-bbe3-4793f8bb42d9">
+
+#### 4. Configure Jenkins build job to save your repository content every time you change it – this will solidify your Jenkins configuration skills acquired in Project 9
+
+- Configure a Webhook in GitHub and set the webhook to trigger ansible build. On ansible-config-mgt repository, select Settings > Webhooks > Add webhook
+
+Result:
+
+<img width="1447" alt="Screenshot 2024-07-14 at 15 12 45" src="https://github.com/user-attachments/assets/723a5203-2f81-421b-ab30-95760fbea8a1">
+
+<img width="924" alt="Screenshot 2024-07-14 at 15 12 56" src="https://github.com/user-attachments/assets/2aaaaeb6-6737-4067-8689-1935d4f534bc">
+
+- Create a new Freestyle project ansible in Jenkins
