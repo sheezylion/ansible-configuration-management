@@ -65,3 +65,86 @@ Result:
 <img width="924" alt="Screenshot 2024-07-14 at 15 12 56" src="https://github.com/user-attachments/assets/2aaaaeb6-6737-4067-8689-1935d4f534bc">
 
 - Create a new Freestyle project ansible in Jenkins
+
+Result:
+
+<img width="1642" alt="Screenshot 2024-07-14 at 15 15 28" src="https://github.com/user-attachments/assets/32717e23-a8d4-4b72-895b-9bc8c8d131d6">
+
+- Point it to the ansible-config-mgt repository Copy the repository URL
+
+Result:
+
+<img width="1622" alt="Screenshot 2024-07-14 at 15 16 21" src="https://github.com/user-attachments/assets/2dbcd588-ee04-4801-8bde-d445a8e7d393">
+
+#### In configuration of our ansible freestyle project choose Git, provide there the link to our ansible-config-mgt GitHub repository and credentials (user/password) so Jenkins could access files in the repository.
+
+Result:
+
+<img width="1557" alt="Screenshot 2024-07-14 at 15 18 05" src="https://github.com/user-attachments/assets/03515723-378b-4db1-b4df-9b7cd133d4af">
+
+<img width="1419" alt="Screenshot 2024-07-14 at 15 19 20" src="https://github.com/user-attachments/assets/72ae180c-8073-41c1-bc97-2b38a1fac755">
+
+- Configure a Post-build job to save all (**) files, like you did it in Project 9.
+
+<img width="1665" alt="Screenshot 2024-07-14 at 15 21 15" src="https://github.com/user-attachments/assets/37c3281c-e6ea-4531-83e5-0be13d2abf12">
+
+#### 5. Test your setup by making some change in README.MD file in master branch and make sure that builds starts automatically and Jenkins saves the files (build artifacts) in following folder
+
+Result:
+
+<img width="1679" alt="Screenshot 2024-07-14 at 15 24 29" src="https://github.com/user-attachments/assets/0c5c574d-5726-4632-ae8b-01f8cb9da0d1">
+
+#### Check ansible project on jenkins for the build
+
+Result:
+
+<img width="1679" alt="Screenshot 2024-07-14 at 15 27 58" src="https://github.com/user-attachments/assets/de1443ba-e8dc-45dd-a60a-796fe3c9d8d6">
+
+<img width="1680" alt="Screenshot 2024-07-14 at 15 28 12" src="https://github.com/user-attachments/assets/0af764f8-8243-43ed-91b7-06624386d3a9">
+
+```
+ls /var/lib/jenkins/jobs/Ansible/builds/<build_number>/archive/
+```
+
+Result:
+
+<img width="881" alt="Screenshot 2024-07-14 at 15 32 39" src="https://github.com/user-attachments/assets/c59d7958-cd5a-41f8-a4d6-9950bd48c75d">
+
+
+### Note: Trigger Jenkins project execution only for /main (master) branch.
+
+#### Now your setup will look like this:
+
+<img width="781" alt="architecture2" src="https://github.com/user-attachments/assets/953e23b4-5c77-4645-a404-0b5462718e58">
+
+**Tip:** Allocate an Elastic IP to your Jenkins-Ansible server to avoid reconfigure of GitHub webhook to a new IP address anytime you stop/start your Jenkins-Ansible server.
+
+Allocate elastic IP:
+
+Result:
+
+<img width="953" alt="Screenshot 2024-07-14 at 15 38 22" src="https://github.com/user-attachments/assets/76337f82-1e1e-41b0-a564-9ef489f22641">
+
+<img width="1678" alt="Screenshot 2024-07-14 at 15 38 48" src="https://github.com/user-attachments/assets/f2d700bc-cd2e-46de-9e65-be784bf492e4">
+
+<img width="1004" alt="Screenshot 2024-07-14 at 15 39 07" src="https://github.com/user-attachments/assets/8213bd7f-14a1-4971-9b4c-13ccf9011f37">
+
+#### Update the webhook
+
+Result:
+
+<img width="1514" alt="Screenshot 2024-07-14 at 15 41 33" src="https://github.com/user-attachments/assets/ccc7fbfd-8ef9-4c1c-9f00-859f498f5b96">
+
+**Note:** Elastic IP is free only when it is being allocated to an EC2 Instance, so do not forget to release Elastic IP once you terminate your EC2 Instance.
+
+### Step 2 – Prepare your development environment using Visual Studio Code
+
+#### 1. First part of DevOps is Dev, which means you will require to write some codes and you shall have proper tools that will make your coding and debugging comfortable – you need an Integrated development environment (IDE) or Source-code Editor.
+
+There is a plethora of different IDEs and Source-code Editors for different languages with their own advantages and drawbacks, you can choose whichever you are comfortable with, but we recommend one free and universal editor that will fully satisfy your needs – Visual Studio Code (VSC).
+
+#### 2. After you have successfully installed VSC, configure it to connect to your newly created GitHub repository.
+
+Result:
+
+
