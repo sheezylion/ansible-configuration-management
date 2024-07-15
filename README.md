@@ -415,4 +415,58 @@ Now, it is time to execute ansible-playbook command and verify if your playbook 
 Result:
 <img width="1339" alt="Screenshot 2024-07-14 at 19 59 51" src="https://github.com/user-attachments/assets/9ee7b991-6205-4c1a-bd74-ee7e2aeccec1">
 
+1. Run ansible-playbook command:
 
+```
+ansible-playbook -i inventory/dev.yml playbooks/common.yml
+```
+
+Result:
+
+<img width="1680" alt="Screenshot 2024-07-15 at 16 11 10" src="https://github.com/user-attachments/assets/11fe5503-3adf-4332-a5f6-0e54845d7b6e">
+
+2. You can go to each of the servers and check if wireshark has been installed by running
+
+```
+which wireshark
+
+or
+
+wireshark --version
+```
+
+#### Check Web Server 1
+
+Result:
+
+<img width="845" alt="Screenshot 2024-07-15 at 16 16 26" src="https://github.com/user-attachments/assets/9e57e6b2-50cc-4e6b-af15-9bc6337865ec">
+
+#### Check Web Server 2
+
+Result:
+
+<img width="850" alt="Screenshot 2024-07-15 at 16 17 57" src="https://github.com/user-attachments/assets/d11d5474-d4d3-4a78-904b-e1b670c21f24">
+
+#### Check NFS Server
+
+Result:
+
+<img width="850" alt="Screenshot 2024-07-15 at 16 19 26" src="https://github.com/user-attachments/assets/c2577b85-6f7f-4fae-ad1d-4047652f5cd5">
+
+#### Check Database Server
+
+Result:
+
+<img width="847" alt="Screenshot 2024-07-15 at 16 21 23" src="https://github.com/user-attachments/assets/5351821a-c846-4107-9e48-253b1a6fd168">
+
+#### check Load Balancer Server
+
+Result:
+
+<img width="850" alt="Screenshot 2024-07-15 at 16 22 53" src="https://github.com/user-attachments/assets/23c3fa37-a220-4885-a8f2-def3a1841bd2">
+
+#### Your updated with Ansible architecture now looks like this:
+
+Result:
+
+<img width="745" alt="architecture3" src="https://github.com/user-attachments/assets/b5dc995e-d790-4ee4-aa4e-c5db0660f099">
